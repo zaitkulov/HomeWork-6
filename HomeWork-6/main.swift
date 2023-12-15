@@ -124,3 +124,52 @@ myCar.performAction(.unloadCargo(volume: 35))
 myCar.performAction(.stopEngine)
 
 
+//4. Инициализация и использование структур
+
+enum Action {
+    case drive
+    case stop
+    case parking
+}
+struct Person {
+    var name: String
+    var age: Int
+    
+    func perform(action: Action) {
+        switch action {
+        case.drive:
+            print ("\(name) едет")
+        case.stop:
+            print ("\(name) стоит")
+        case.parking:
+            print("\(name) паркуется")
+        }
+    }
+}
+struct Car {
+    var brand: String
+    var model: String
+    var year: Int
+    
+    func perform(action: Action) {
+        switch action {
+        case.drive:
+            print("\(brand) \(model) едет")
+        case.stop:
+            print("\(brand) \(model) стоит")
+        case.parking:
+            print("\(brand) \(model) паркуется")
+        }
+    }
+}
+let person1 = Person(name: "Artyom", age: 27)
+let person2 = Person(name: "Shamil", age: 35)
+
+let car1 = Car(brand: "Porche", model: "911", year: 2022 )
+let car2 = Car(brand: "Toyota", model: "Land Cruiser PRADO", year: 2022 )
+
+person1.perform(action: .drive)
+person2.perform(action: .parking)
+car1.perform(action: .stop)
+car2.perform(action: .drive)
+
