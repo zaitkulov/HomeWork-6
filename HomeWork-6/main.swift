@@ -173,3 +173,34 @@ person2.perform(action: .parking)
 car1.perform(action: .stop)
 car2.perform(action: .drive)
 
+//5.Задание:Вывод свойств объектов
+
+enum Action {
+    case eat
+    case sleep
+    case work
+}
+struct Person {
+    var name: String
+    var age: Int
+    
+    func performAction(_ action: Action) {
+        switch action {
+        case.eat:
+            print ("\(name) кушает")
+        case.sleep:
+            print ("\(name) спит")
+        case.work:
+            print("\(name) работает")
+        }
+    }
+}
+let person1 = Person(name: "Artyom", age: 27)
+let person2 = Person(name: "Shamil", age: 35)
+
+person1.performAction(.eat)
+person2.performAction(.work)
+
+print("Person 1 - Name: \(person1.name), Age: \(person1.age)")
+print("Person 2 - Name: \(person2.name), Age: \(person2.age)")
+
